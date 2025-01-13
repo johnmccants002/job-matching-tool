@@ -3,7 +3,7 @@
 export default function LoginPage() {
   const handleLogin = () => {
     // Redirect to the LinkedIn login route
-    window.location.href = "http://localhost:5000/auth/linkedin/login";
+    window.location.href = "http://localhost:3001/auth/linkedin/login";
   };
 
   return (

@@ -1,3 +1,7 @@
+"use client";
+
+import ResumeUpload from "@/components/ResumeUpload";
+
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-6">
@@ -20,6 +24,12 @@ export default function DashboardPage() {
             </h2>
             <p className="text-gray-600">No data available. Stay tuned!</p>
           </div>
+        </div>
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
+            Upload Your Resume
+          </h2>
+          <ResumeUpload />
         </div>
       </div>
     </div>
