@@ -1,10 +1,13 @@
+"use client";
+
 import React, { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation"; // Correct import for App Router
 
 const ResumeUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadStatus, setUploadStatus] = useState<string>("");
-
+  const router = useRouter();
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       const selectedFile = event.target.files[0];
@@ -46,6 +49,7 @@ const ResumeUpload: React.FC = () => {
       );
       setUploadStatus("Upload successful!");
       console.log("Response:", response.data);
+      router.push("/results");
     } catch (error) {
       console.error("Error uploading resume:", error);
       setUploadStatus("Failed to upload resume. Please try again.");
